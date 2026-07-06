@@ -40,6 +40,7 @@ function scrollToSection(id: string) {
 
 export default function App() {
   const [activeId, setActiveId] = useState('arrival');
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll<HTMLElement>('.hero-section, .section'));
@@ -81,14 +82,27 @@ export default function App() {
       activeObserver.observe(section);
     });
 
+    const handleScroll = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+      setScrollProgress(Math.min(1, Math.max(0, progress)));
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
     return () => {
       revealObserver.disconnect();
       activeObserver.disconnect();
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
     <>
+      <div className="scroll-progress" aria-hidden="true">
+        <span style={{ transform: `scaleX(${scrollProgress})` }} />
+      </div>
       <Navigation items={navItems} activeId={activeId} />
       <main>
         <section id="arrival" className="hero-section">
@@ -113,9 +127,23 @@ export default function App() {
           </div>
           <div className="hero-emblem" aria-label="Groomed Gent Co. logo emblem">
             <div className="emblem-aura" aria-hidden="true" />
+            <div className="emblem-plate" aria-hidden="true" />
+            <div className="emblem-ring emblem-ring--machined" aria-hidden="true" />
             <div className="emblem-ring emblem-ring--outer" aria-hidden="true" />
+            <div className="emblem-ring emblem-ring--segmented" aria-hidden="true" />
             <div className="emblem-ring emblem-ring--inner" aria-hidden="true" />
+            <div className="emblem-ring emblem-ring--precision" aria-hidden="true" />
             <div className="emblem-orbit" aria-hidden="true" />
+            <div className="emblem-crosshair" aria-hidden="true" />
+            <div className="emblem-compass" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+              <span />
+            </div>
+            <div className="emblem-node emblem-node--one" aria-hidden="true" />
+            <div className="emblem-node emblem-node--two" aria-hidden="true" />
+            <div className="emblem-node emblem-node--three" aria-hidden="true" />
             <div className="hero-logo-stage">
               <img className="hero-logo" src={ggcLogo} alt="Groomed Gent Co. logo" />
             </div>

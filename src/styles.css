@@ -1466,3 +1466,1143 @@ h3 {
     min-width: 230px;
   }
 }
+
+/* Final command-chamber pass: black/gold dominance with purple as shadow only. */
+:root {
+  --obsidian: #050505;
+  --soft-black: #080707;
+  --panel: #0e0c09;
+  --elevated-panel: #14100b;
+  --gold: #c4912f;
+  --deep-gold: #a8741a;
+  --soft-gold: #e0b84b;
+  --antique-gold: #6f4710;
+  --purple: #2a0f4a;
+  --royal-purple: #1b092d;
+  --violet-shadow: rgba(42, 15, 74, 0.35);
+  --muted: #c9c0b2;
+  --line: rgba(196, 145, 47, 0.34);
+  --glass: rgba(14, 12, 9, 0.84);
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background:
+    radial-gradient(circle at 18% 6%, rgba(196, 145, 47, 0.16), transparent 24rem),
+    radial-gradient(circle at 82% 18%, rgba(168, 116, 26, 0.12), transparent 26rem),
+    radial-gradient(circle at 50% 92%, rgba(42, 15, 74, 0.2), transparent 34rem),
+    linear-gradient(115deg, rgba(245, 240, 230, 0.018) 0 1px, transparent 1px 56px),
+    linear-gradient(25deg, rgba(196, 145, 47, 0.016) 0 1px, transparent 1px 48px),
+    linear-gradient(180deg, #050505 0%, #080707 48%, #050505 100%);
+}
+
+body::before {
+  background:
+    radial-gradient(circle at center, transparent 0, rgba(5, 5, 5, 0.84) 74%),
+    repeating-linear-gradient(90deg, rgba(196, 145, 47, 0.025) 0 1px, transparent 1px 92px),
+    repeating-linear-gradient(0deg, rgba(245, 240, 230, 0.014) 0 1px, transparent 1px 5px);
+  mix-blend-mode: normal;
+}
+
+body::after {
+  opacity: 0.18;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(224, 184, 75, 0.32) 0 1px, transparent 1px),
+    radial-gradient(circle at 70% 70%, rgba(245, 240, 230, 0.16) 0 1px, transparent 1px);
+  background-size: 5px 5px, 8px 8px;
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 60;
+  height: 3px;
+  background: rgba(5, 5, 5, 0.72);
+}
+
+.scroll-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--antique-gold), var(--soft-gold), var(--gold));
+  box-shadow: 0 0 18px rgba(224, 184, 75, 0.46);
+}
+
+.navigation {
+  min-height: 66px;
+  padding-block: 10px;
+  background:
+    linear-gradient(180deg, rgba(20, 16, 11, 0.9), rgba(5, 5, 5, 0.86)),
+    rgba(5, 5, 5, 0.9);
+  border-bottom-color: rgba(196, 145, 47, 0.38);
+  box-shadow: 0 16px 54px rgba(0, 0, 0, 0.42), inset 0 -1px 0 rgba(224, 184, 75, 0.12);
+}
+
+.nav-links a {
+  padding: 8px 10px;
+  color: rgba(245, 240, 230, 0.72);
+  background: rgba(8, 7, 7, 0.24);
+  border-color: rgba(196, 145, 47, 0.08);
+}
+
+.nav-links a.is-active {
+  color: #050505;
+  background:
+    linear-gradient(135deg, rgba(245, 240, 230, 0.32), transparent 30%),
+    linear-gradient(135deg, var(--soft-gold), var(--gold) 48%, var(--deep-gold));
+  border-color: rgba(245, 240, 230, 0.3);
+  box-shadow: inset 0 0 12px rgba(5, 5, 5, 0.34), 0 0 26px rgba(196, 145, 47, 0.22);
+}
+
+button {
+  position: relative;
+  overflow: hidden;
+  color: #090806;
+  background:
+    linear-gradient(130deg, rgba(245, 240, 230, 0.46), transparent 24%, rgba(111, 71, 16, 0.28) 72%),
+    linear-gradient(135deg, #e0b84b 0%, #c4912f 43%, #8c5b16 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(245, 240, 230, 0.48),
+    inset 0 -10px 18px rgba(5, 5, 5, 0.22),
+    0 18px 42px rgba(196, 145, 47, 0.24);
+}
+
+button::after {
+  position: absolute;
+  inset: -40% auto -40% -70%;
+  width: 56%;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(245, 240, 230, 0.56), transparent);
+  transform: skewX(-20deg);
+  transition: transform 520ms ease;
+}
+
+button:hover::after {
+  transform: translateX(330%) skewX(-20deg);
+}
+
+button:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.button-secondary {
+  color: var(--ivory);
+  background:
+    linear-gradient(140deg, rgba(224, 184, 75, 0.12), transparent 36%),
+    linear-gradient(180deg, rgba(20, 16, 11, 0.92), rgba(8, 7, 7, 0.9));
+  border-color: rgba(224, 184, 75, 0.48);
+  box-shadow: inset 0 0 22px rgba(196, 145, 47, 0.08), 0 16px 38px rgba(0, 0, 0, 0.28);
+}
+
+.hero-section,
+.section {
+  scroll-margin-top: 96px;
+}
+
+.hero-section {
+  grid-template-columns: minmax(0, 0.9fr) minmax(430px, 0.86fr);
+  background:
+    radial-gradient(circle at 72% 46%, rgba(224, 184, 75, 0.16), transparent 30rem),
+    radial-gradient(circle at 78% 50%, rgba(42, 15, 74, 0.18), transparent 36rem),
+    linear-gradient(120deg, rgba(20, 16, 11, 0.34), transparent 54%),
+    #050505;
+}
+
+.hero-section::after,
+.section::after {
+  background:
+    linear-gradient(180deg, rgba(5, 5, 5, 0.08), rgba(5, 5, 5, 0.42) 76%, rgba(5, 5, 5, 0.88)),
+    radial-gradient(circle at 12% 20%, rgba(196, 145, 47, 0.08), transparent 24rem),
+    radial-gradient(circle at 90% 40%, rgba(42, 15, 74, 0.1), transparent 24rem);
+}
+
+.hero-content {
+  padding: clamp(18px, 2.6vw, 30px);
+  background:
+    linear-gradient(105deg, rgba(20, 16, 11, 0.7), rgba(5, 5, 5, 0.22) 70%),
+    linear-gradient(90deg, rgba(224, 184, 75, 0.08), transparent);
+  border-left: 1px solid rgba(224, 184, 75, 0.32);
+  box-shadow: -18px 0 54px rgba(196, 145, 47, 0.04);
+}
+
+h1 {
+  font-size: clamp(3.7rem, 7.8vw, 7.9rem);
+  text-shadow: 0 0 36px rgba(196, 145, 47, 0.24), 0 18px 48px rgba(0, 0, 0, 0.54);
+}
+
+h2 {
+  font-size: clamp(2.45rem, 4.4vw, 5rem);
+  text-shadow: 0 0 34px rgba(196, 145, 47, 0.14), 0 16px 42px rgba(0, 0, 0, 0.44);
+}
+
+.hero-subtitle,
+.section-intro,
+.hero-statement,
+.glass-card p,
+.pillar-card p,
+.roadmap-phase p {
+  color: rgba(245, 240, 230, 0.78);
+}
+
+.tagline {
+  background:
+    linear-gradient(135deg, rgba(224, 184, 75, 0.12), rgba(20, 16, 11, 0.82)),
+    rgba(5, 5, 5, 0.58);
+  border-color: rgba(224, 184, 75, 0.42);
+}
+
+.hero-emblem {
+  width: min(46vw, 650px);
+  min-width: 420px;
+}
+
+.emblem-aura {
+  inset: -16%;
+  background:
+    radial-gradient(circle, rgba(224, 184, 75, 0.34), transparent 31%),
+    radial-gradient(circle, rgba(196, 145, 47, 0.18), transparent 48%),
+    radial-gradient(circle, rgba(42, 15, 74, 0.28), transparent 68%),
+    radial-gradient(circle, rgba(5, 5, 5, 0), rgba(5, 5, 5, 0.86) 82%);
+}
+
+.emblem-ring {
+  border-color: rgba(224, 184, 75, 0.16);
+}
+
+.emblem-ring--outer {
+  inset: -5%;
+  background:
+    radial-gradient(circle, transparent 57%, rgba(8, 7, 7, 0.96) 58% 65%, transparent 66%),
+    conic-gradient(from 12deg, rgba(111, 71, 16, 0.28), rgba(224, 184, 75, 0.82) 9%, rgba(8, 7, 7, 0.84) 15%, transparent 24%, rgba(196, 145, 47, 0.72) 37%, rgba(8, 7, 7, 0.88) 46%, transparent 62%, rgba(224, 184, 75, 0.66) 76%, rgba(8, 7, 7, 0.9) 84%, rgba(111, 71, 16, 0.28));
+  box-shadow:
+    0 0 0 14px rgba(8, 7, 7, 0.76),
+    0 0 0 15px rgba(196, 145, 47, 0.22),
+    0 0 96px rgba(196, 145, 47, 0.24),
+    inset 0 0 50px rgba(0, 0, 0, 0.72);
+  animation-duration: 62s;
+}
+
+.emblem-ring--segmented {
+  inset: 3.5%;
+  background:
+    conic-gradient(from 80deg, transparent 0 5%, rgba(224, 184, 75, 0.96) 6% 9%, transparent 10% 24%, rgba(168, 116, 26, 0.9) 25% 28%, transparent 29% 47%, rgba(224, 184, 75, 0.72) 48% 52%, transparent 53% 75%, rgba(196, 145, 47, 0.86) 76% 80%, transparent 81% 100%);
+  mask-image: radial-gradient(circle, transparent 65%, black 66%, black 71%, transparent 72%);
+  animation: emblem-counter-rotate 48s linear infinite;
+}
+
+.emblem-ring--inner {
+  inset: 13%;
+  background:
+    radial-gradient(circle, transparent 57%, rgba(224, 184, 75, 0.2) 58% 61%, transparent 62%),
+    conic-gradient(from 210deg, transparent 0 17%, rgba(224, 184, 75, 0.72) 18% 21%, transparent 22% 54%, rgba(111, 71, 16, 0.52) 55% 60%, transparent 61% 100%);
+  box-shadow: inset 0 0 32px rgba(196, 145, 47, 0.24), 0 0 34px rgba(42, 15, 74, 0.18);
+}
+
+.emblem-ring--precision {
+  inset: 22%;
+  background:
+    repeating-conic-gradient(from 0deg, rgba(224, 184, 75, 0.76) 0deg 1deg, transparent 1deg 12deg),
+    radial-gradient(circle, transparent 68%, rgba(224, 184, 75, 0.16) 69%, transparent 71%);
+  mask-image: radial-gradient(circle, transparent 72%, black 73%, black 75%, transparent 76%);
+  animation: emblem-rotate 90s linear infinite;
+}
+
+.emblem-orbit {
+  inset: -0.5%;
+  background:
+    repeating-conic-gradient(from 0deg, rgba(224, 184, 75, 0.62) 0deg 0.75deg, transparent 0.75deg 7deg),
+    radial-gradient(circle, transparent 70%, rgba(224, 184, 75, 0.11) 71%, transparent 72%);
+}
+
+.emblem-node {
+  position: absolute;
+  z-index: 3;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f5f0e6, #e0b84b 38%, #6f4710 70%);
+  box-shadow: 0 0 18px rgba(224, 184, 75, 0.58), 0 0 34px rgba(196, 145, 47, 0.22);
+  transform-origin: center;
+}
+
+.emblem-node--one {
+  top: 7%;
+  left: 50%;
+  animation: node-drift-one 36s linear infinite;
+}
+
+.emblem-node--two {
+  right: 9%;
+  bottom: 26%;
+  width: 9px;
+  height: 9px;
+  animation: node-drift-two 44s linear infinite;
+}
+
+.emblem-node--three {
+  bottom: 12%;
+  left: 20%;
+  width: 8px;
+  height: 8px;
+  animation: node-drift-three 52s linear infinite;
+}
+
+.hero-logo-stage {
+  width: 72%;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(224, 184, 75, 0.4), transparent 52%),
+    radial-gradient(circle, rgba(8, 7, 7, 0.92) 38%, rgba(20, 16, 11, 0.84) 64%, rgba(5, 5, 5, 0.8));
+  border-color: rgba(224, 184, 75, 0.46);
+  box-shadow:
+    0 0 110px rgba(196, 145, 47, 0.34),
+    0 0 130px rgba(42, 15, 74, 0.16),
+    inset 0 0 0 10px rgba(5, 5, 5, 0.56),
+    inset 0 0 54px rgba(224, 184, 75, 0.1);
+}
+
+.hero-logo-stage::before {
+  inset: -12%;
+  border-color: rgba(224, 184, 75, 0.24);
+}
+
+.hero-logo-stage::after {
+  inset: 4%;
+  border-color: rgba(224, 184, 75, 0.2);
+}
+
+.hero-logo {
+  filter:
+    drop-shadow(0 32px 54px rgba(0, 0, 0, 0.74))
+    drop-shadow(0 0 38px rgba(224, 184, 75, 0.32));
+}
+
+@keyframes node-drift-one {
+  to {
+    transform: rotate(360deg) translateX(0);
+  }
+}
+
+@keyframes node-drift-two {
+  to {
+    transform: rotate(-360deg) translateX(0);
+  }
+}
+
+@keyframes node-drift-three {
+  to {
+    transform: rotate(360deg) translateX(0);
+  }
+}
+
+.glass-card,
+.pillar-card,
+.product-card,
+.roadmap-phase,
+.timeline-step,
+.module-tile {
+  border: 1px solid rgba(196, 145, 47, 0.34);
+  background:
+    linear-gradient(135deg, rgba(245, 240, 230, 0.09), transparent 18%, rgba(111, 71, 16, 0.08) 72%),
+    radial-gradient(circle at 82% 12%, rgba(196, 145, 47, 0.14), transparent 26%),
+    linear-gradient(160deg, rgba(20, 16, 11, 0.96), rgba(8, 7, 7, 0.96) 58%, rgba(5, 5, 5, 0.98));
+  box-shadow:
+    inset 0 1px 0 rgba(245, 240, 230, 0.1),
+    inset 0 0 0 1px rgba(224, 184, 75, 0.06),
+    inset 0 -22px 48px rgba(0, 0, 0, 0.26),
+    0 28px 76px rgba(0, 0, 0, 0.42);
+}
+
+.card-grid {
+  counter-reset: command-card;
+}
+
+.glass-card {
+  counter-increment: command-card;
+}
+
+.glass-card h3::before {
+  display: inline-grid;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  place-items: center;
+  content: counter(command-card, decimal-leading-zero);
+  color: var(--soft-gold);
+  background: rgba(5, 5, 5, 0.64);
+  border: 1px solid rgba(224, 184, 75, 0.36);
+  border-radius: 50%;
+  font-size: 0.7rem;
+  vertical-align: middle;
+  box-shadow: inset 0 0 12px rgba(196, 145, 47, 0.12);
+}
+
+.glass-card::after,
+.pillar-card::after,
+.product-card::after,
+.roadmap-phase::after {
+  height: 3px;
+  background: linear-gradient(90deg, rgba(111, 71, 16, 0.1), rgba(224, 184, 75, 0.92), rgba(196, 145, 47, 0.18));
+  transform: scaleX(0.34);
+  transform-origin: left center;
+  transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.glass-card:hover::after,
+.pillar-card:hover::after,
+.product-card:hover::after,
+.roadmap-phase:hover::after {
+  transform: scaleX(1);
+  box-shadow: 0 0 18px rgba(224, 184, 75, 0.34);
+}
+
+.glass-card:hover,
+.pillar-card:hover,
+.product-card:hover,
+.roadmap-phase:hover,
+.timeline-step:hover,
+.module-tile:hover {
+  transform: perspective(900px) translateY(-8px) rotateX(1deg);
+  border-color: rgba(224, 184, 75, 0.58);
+  box-shadow:
+    inset 0 1px 0 rgba(245, 240, 230, 0.14),
+    inset 0 0 0 1px rgba(224, 184, 75, 0.12),
+    0 34px 92px rgba(0, 0, 0, 0.52),
+    0 0 42px rgba(196, 145, 47, 0.16);
+}
+
+.section-market-gap,
+.section-ecosystem,
+.section-legacy-reserve,
+.section-legacy-sanctum,
+.section-sanctum-circle,
+.section-member-app,
+.section-crew-dream-code,
+.section-why-win,
+.section-roadmap,
+.section-closing {
+  background:
+    radial-gradient(circle at 16% 24%, rgba(196, 145, 47, 0.09), transparent 24rem),
+    radial-gradient(circle at 86% 30%, rgba(42, 15, 74, 0.12), transparent 24rem),
+    linear-gradient(180deg, rgba(5, 5, 5, 0.98), rgba(8, 7, 7, 0.98));
+}
+
+.section-legacy-reserve {
+  background:
+    radial-gradient(circle at 18% 26%, rgba(224, 184, 75, 0.15), transparent 28rem),
+    linear-gradient(135deg, rgba(20, 16, 11, 0.62), rgba(5, 5, 5, 0.98) 58%);
+}
+
+.section-legacy-sanctum,
+.section-member-app {
+  background:
+    radial-gradient(circle at 76% 30%, rgba(42, 15, 74, 0.22), transparent 30rem),
+    radial-gradient(circle at 20% 18%, rgba(196, 145, 47, 0.1), transparent 24rem),
+    linear-gradient(180deg, #050505, #080707);
+}
+
+.ecosystem-wrap {
+  padding: clamp(18px, 4vw, 46px);
+  background:
+    linear-gradient(135deg, rgba(224, 184, 75, 0.08), transparent 24%, rgba(111, 71, 16, 0.08) 78%),
+    linear-gradient(rgba(196, 145, 47, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(196, 145, 47, 0.045) 1px, transparent 1px),
+    rgba(5, 5, 5, 0.82);
+  background-size: auto, 54px 54px, 54px 54px;
+  border-color: rgba(196, 145, 47, 0.34);
+  box-shadow: inset 0 0 72px rgba(196, 145, 47, 0.08), 0 30px 100px rgba(0, 0, 0, 0.38);
+}
+
+.ecosystem-architecture {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas:
+    "node1 core node2"
+    "node3 core node4"
+    "node5 core node6";
+  gap: clamp(14px, 2vw, 22px);
+  align-items: stretch;
+}
+
+.ecosystem-architecture::before,
+.ecosystem-architecture::after {
+  position: absolute;
+  inset: 50% 4% auto;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(224, 184, 75, 0.62), rgba(196, 145, 47, 0.22), transparent);
+  box-shadow: 0 0 18px rgba(224, 184, 75, 0.24);
+}
+
+.ecosystem-architecture::after {
+  inset: 5% auto 5% 50%;
+  width: 1px;
+  height: auto;
+}
+
+.ecosystem-node-1 { grid-area: node1; }
+.ecosystem-node-2 { grid-area: node2; }
+.ecosystem-node-3 { grid-area: node3; }
+.ecosystem-node-4 { grid-area: node4; }
+.ecosystem-node-5 { grid-area: node5; }
+.ecosystem-node-6 { grid-area: node6; }
+
+.ecosystem-core {
+  grid-area: core;
+  width: 100%;
+  min-height: 100%;
+  align-self: stretch;
+  background:
+    radial-gradient(circle at center, rgba(224, 184, 75, 0.26), transparent 54%),
+    linear-gradient(160deg, rgba(20, 16, 11, 0.96), rgba(5, 5, 5, 0.96));
+  border-color: rgba(224, 184, 75, 0.54);
+}
+
+.ecosystem-core strong {
+  color: var(--ivory);
+}
+
+.pillar-card {
+  min-height: 210px;
+}
+
+.pillar-number {
+  color: #050505;
+  background: linear-gradient(135deg, var(--soft-gold), var(--gold) 52%, var(--deep-gold));
+  border-color: rgba(245, 240, 230, 0.28);
+}
+
+.command-line,
+.final-line,
+.positioning-line {
+  border-color: rgba(224, 184, 75, 0.46);
+  background:
+    linear-gradient(115deg, rgba(224, 184, 75, 0.18), transparent 24%),
+    linear-gradient(180deg, rgba(20, 16, 11, 0.94), rgba(5, 5, 5, 0.92));
+}
+
+.timeline {
+  overflow-x: auto;
+  scrollbar-color: rgba(196, 145, 47, 0.52) transparent;
+}
+
+.timeline::before,
+.roadmap::before {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--soft-gold), var(--gold), transparent);
+  box-shadow: 0 0 20px rgba(224, 184, 75, 0.26);
+}
+
+.timeline-step span {
+  color: #050505;
+  background: linear-gradient(135deg, var(--soft-gold), var(--gold));
+  border-color: rgba(245, 240, 230, 0.34);
+}
+
+.product-card span {
+  width: 18px;
+  height: 68px;
+  border: 1px solid rgba(245, 240, 230, 0.18);
+  box-shadow: 0 0 22px rgba(196, 145, 47, 0.16);
+}
+
+.product-grid-sanctum .product-card span {
+  background: linear-gradient(var(--soft-gold), rgba(42, 15, 74, 0.4));
+}
+
+.box-stage {
+  grid-template-columns: minmax(300px, 0.85fr) minmax(0, 1.3fr);
+}
+
+.box-object {
+  background:
+    radial-gradient(circle at 50% 28%, rgba(224, 184, 75, 0.22), transparent 25%),
+    linear-gradient(135deg, rgba(245, 240, 230, 0.1), transparent 36%),
+    linear-gradient(180deg, rgba(20, 16, 11, 0.94), rgba(5, 5, 5, 0.96));
+  border-color: rgba(224, 184, 75, 0.48);
+}
+
+.box-object span {
+  color: var(--soft-gold);
+  background: rgba(5, 5, 5, 0.62);
+  box-shadow: 0 0 44px rgba(196, 145, 47, 0.16);
+}
+
+.app-mockup {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(42, 15, 74, 0.2), transparent 30%),
+    linear-gradient(145deg, rgba(14, 12, 9, 0.98), rgba(5, 5, 5, 0.98));
+  border-color: rgba(224, 184, 75, 0.42);
+}
+
+.mockup-sidebar span::before,
+.module-tile::after {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  content: "";
+  background: var(--soft-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 14px rgba(224, 184, 75, 0.56);
+}
+
+.module-tile {
+  align-content: end;
+  border-color: rgba(196, 145, 47, 0.28);
+}
+
+.protocol-panel {
+  border-color: rgba(224, 184, 75, 0.32);
+}
+
+.roadmap-phase {
+  min-height: 245px;
+}
+
+.section-closing .section-inner::before {
+  display: block;
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 24px;
+  content: "GGC";
+  color: var(--soft-gold);
+  border: 1px solid rgba(224, 184, 75, 0.54);
+  border-radius: 50%;
+  font-family: Cinzel, Georgia, "Times New Roman", serif;
+  font-weight: 900;
+  line-height: 92px;
+  box-shadow: inset 0 0 26px rgba(196, 145, 47, 0.14), 0 0 48px rgba(196, 145, 47, 0.18);
+}
+
+@media (max-width: 1100px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    padding-top: 44px;
+  }
+
+  .hero-emblem {
+    width: min(64vw, 500px);
+    min-width: 280px;
+  }
+
+  .ecosystem-architecture {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "core core"
+      "node1 node2"
+      "node3 node4"
+      "node5 node6";
+  }
+
+  .ecosystem-core {
+    min-height: 190px;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    scroll-padding-top: 82px;
+  }
+
+  .hero-section,
+  .section {
+    scroll-margin-top: 88px;
+  }
+
+  .navigation {
+    gap: 9px;
+    min-height: 58px;
+    padding: 8px 12px;
+  }
+
+  .brand-mark small {
+    display: none;
+  }
+
+  .brand-sigil {
+    width: 34px;
+    height: 34px;
+    font-size: 0.62rem;
+  }
+
+  .nav-links a {
+    padding: 7px 9px;
+    font-size: 0.72rem;
+  }
+
+  .hero-section {
+    gap: 22px;
+    padding-top: 32px;
+  }
+
+  .hero-content {
+    padding: 16px;
+  }
+
+  .hero-emblem {
+    width: min(76vw, 340px);
+    min-width: 0;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 17vw, 4.2rem);
+  }
+
+  h2 {
+    font-size: clamp(2.1rem, 11vw, 3.1rem);
+  }
+
+  .ecosystem-architecture {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "core"
+      "node1"
+      "node2"
+      "node3"
+      "node4"
+      "node5"
+      "node6";
+  }
+
+  .box-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .ecosystem-architecture::before,
+  .ecosystem-architecture::after {
+    display: none;
+  }
+
+  .timeline,
+  .roadmap {
+    margin-inline: -4px;
+    padding-inline: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .emblem-ring--segmented,
+  .emblem-ring--precision,
+  .emblem-node {
+    animation: none;
+  }
+
+  button::after {
+    display: none;
+  }
+}
+
+/* Hero-only command seal refinement. Keep this scoped to the arrival screen. */
+#arrival.hero-section {
+  grid-template-columns: minmax(0, 0.92fr) minmax(390px, 0.82fr);
+  gap: clamp(28px, 4.4vw, 68px);
+  min-height: calc(100svh - 66px);
+  padding-top: clamp(44px, 6vw, 84px);
+  padding-bottom: clamp(42px, 6vw, 84px);
+  background:
+    radial-gradient(circle at 74% 46%, rgba(224, 184, 75, 0.22), transparent 20rem),
+    radial-gradient(circle at 76% 46%, rgba(196, 145, 47, 0.16), transparent 31rem),
+    radial-gradient(circle at 78% 48%, rgba(42, 15, 74, 0.16), transparent 38rem),
+    linear-gradient(115deg, rgba(20, 16, 11, 0.54), transparent 48%),
+    linear-gradient(180deg, #050505 0%, #080707 54%, #050505 100%);
+}
+
+#arrival.hero-section::before {
+  background:
+    linear-gradient(rgba(224, 184, 75, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(224, 184, 75, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 74% 48%, transparent 0 17rem, rgba(224, 184, 75, 0.08) 17.1rem 17.2rem, transparent 17.3rem 22rem, rgba(224, 184, 75, 0.05) 22.1rem 22.2rem, transparent 22.3rem);
+  background-size: 54px 54px, 54px 54px, auto;
+  mask-image: linear-gradient(to bottom, black, black 68%, transparent);
+  opacity: 0.9;
+}
+
+#arrival.hero-section::after {
+  background:
+    radial-gradient(circle at 76% 46%, transparent 0 18rem, rgba(5, 5, 5, 0.12) 18.1rem 24rem, rgba(5, 5, 5, 0.72) 40rem),
+    radial-gradient(circle at 15% 18%, rgba(111, 71, 16, 0.13), transparent 18rem),
+    linear-gradient(90deg, rgba(5, 5, 5, 0.68), transparent 50%, rgba(5, 5, 5, 0.18)),
+    linear-gradient(180deg, transparent 0%, rgba(5, 5, 5, 0.82) 100%);
+}
+
+#arrival .hero-content {
+  max-width: 760px;
+  padding: clamp(18px, 2.4vw, 28px) clamp(18px, 2.8vw, 34px);
+  background:
+    linear-gradient(105deg, rgba(20, 16, 11, 0.92), rgba(5, 5, 5, 0.44) 68%, transparent),
+    linear-gradient(90deg, rgba(224, 184, 75, 0.11), transparent 58%);
+  border-left: 2px solid rgba(224, 184, 75, 0.52);
+  border-top: 1px solid rgba(224, 184, 75, 0.14);
+  box-shadow:
+    -22px 0 54px rgba(196, 145, 47, 0.08),
+    inset 24px 0 42px rgba(196, 145, 47, 0.045);
+}
+
+#arrival .eyebrow {
+  color: var(--soft-gold);
+  background:
+    linear-gradient(135deg, rgba(224, 184, 75, 0.14), rgba(8, 7, 7, 0.84)),
+    rgba(5, 5, 5, 0.8);
+  border-color: rgba(224, 184, 75, 0.46);
+  box-shadow: inset 0 0 18px rgba(196, 145, 47, 0.12), 0 0 24px rgba(196, 145, 47, 0.1);
+}
+
+#arrival h1 {
+  max-width: 780px;
+  margin-bottom: 18px;
+  font-size: clamp(3.65rem, 7.1vw, 7.35rem);
+  line-height: 0.9;
+  text-shadow:
+    0 0 32px rgba(224, 184, 75, 0.22),
+    0 18px 48px rgba(0, 0, 0, 0.66);
+}
+
+#arrival .hero-subtitle,
+#arrival .hero-statement {
+  max-width: 790px;
+  color: rgba(245, 240, 230, 0.82);
+}
+
+#arrival .tagline {
+  color: var(--ivory);
+  background:
+    linear-gradient(135deg, rgba(224, 184, 75, 0.18), rgba(20, 16, 11, 0.92)),
+    rgba(5, 5, 5, 0.7);
+  border-color: rgba(224, 184, 75, 0.52);
+}
+
+#arrival button {
+  box-shadow:
+    inset 0 1px 0 rgba(245, 240, 230, 0.52),
+    inset 0 -12px 18px rgba(5, 5, 5, 0.28),
+    0 18px 46px rgba(196, 145, 47, 0.28);
+}
+
+#arrival .button-secondary {
+  color: var(--ivory);
+  background:
+    radial-gradient(circle at 82% 10%, rgba(42, 15, 74, 0.24), transparent 32%),
+    linear-gradient(140deg, rgba(224, 184, 75, 0.12), transparent 38%),
+    linear-gradient(180deg, rgba(20, 16, 11, 0.94), rgba(5, 5, 5, 0.9));
+}
+
+#arrival .hero-emblem {
+  width: min(43vw, 610px);
+  min-width: 390px;
+  animation: hero-command-pulse 9.6s ease-in-out infinite;
+}
+
+.emblem-plate,
+.emblem-crosshair,
+.emblem-compass {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+#arrival .emblem-plate {
+  inset: -8%;
+  z-index: -1;
+  background:
+    radial-gradient(circle, transparent 52%, rgba(8, 7, 7, 0.92) 53% 61%, rgba(224, 184, 75, 0.18) 61.3% 61.8%, rgba(5, 5, 5, 0.1) 62%),
+    conic-gradient(from 16deg, rgba(224, 184, 75, 0.22), rgba(8, 7, 7, 0.96) 9%, rgba(111, 71, 16, 0.38) 14%, rgba(8, 7, 7, 0.94) 22%, rgba(224, 184, 75, 0.18) 29%, rgba(5, 5, 5, 0.9) 44%, rgba(196, 145, 47, 0.28) 54%, rgba(8, 7, 7, 0.94) 70%, rgba(224, 184, 75, 0.24) 82%, rgba(8, 7, 7, 0.96));
+  box-shadow:
+    0 0 0 1px rgba(224, 184, 75, 0.24),
+    0 0 0 16px rgba(5, 5, 5, 0.54),
+    0 0 96px rgba(196, 145, 47, 0.22),
+    0 0 150px rgba(42, 15, 74, 0.12),
+    inset 0 0 70px rgba(0, 0, 0, 0.82);
+}
+
+#arrival .hero-emblem::before {
+  inset: -12%;
+  background:
+    repeating-conic-gradient(from 0deg, rgba(224, 184, 75, 0.52) 0deg 0.7deg, transparent 0.7deg 5.5deg),
+    radial-gradient(circle, transparent 70%, rgba(224, 184, 75, 0.16) 70.5%, transparent 72%);
+  mask-image: radial-gradient(circle, transparent 72%, black 73%, black 76%, transparent 77%);
+  opacity: 0.8;
+}
+
+#arrival .hero-emblem::after {
+  inset: 10%;
+  background:
+    radial-gradient(circle, rgba(224, 184, 75, 0.28), transparent 45%),
+    radial-gradient(circle, rgba(42, 15, 74, 0.16), transparent 66%);
+  filter: blur(18px);
+}
+
+#arrival .emblem-aura {
+  inset: -14%;
+  background:
+    radial-gradient(circle, rgba(224, 184, 75, 0.38), transparent 28%),
+    radial-gradient(circle, rgba(196, 145, 47, 0.18), transparent 48%),
+    radial-gradient(circle, rgba(42, 15, 74, 0.18), transparent 68%),
+    radial-gradient(circle, rgba(5, 5, 5, 0), rgba(5, 5, 5, 0.88) 82%);
+}
+
+#arrival .emblem-ring--machined {
+  inset: -2.5%;
+  background:
+    radial-gradient(circle, transparent 57%, rgba(8, 7, 7, 0.98) 58% 64%, rgba(224, 184, 75, 0.28) 64.4% 65%, transparent 65.5%),
+    conic-gradient(from 0deg, rgba(224, 184, 75, 0.62), rgba(111, 71, 16, 0.2) 7%, rgba(5, 5, 5, 0.94) 13%, rgba(224, 184, 75, 0.2) 22%, rgba(8, 7, 7, 0.96) 36%, rgba(224, 184, 75, 0.46) 48%, rgba(5, 5, 5, 0.94) 62%, rgba(111, 71, 16, 0.34) 75%, rgba(8, 7, 7, 0.96) 88%, rgba(224, 184, 75, 0.62));
+  mask-image: radial-gradient(circle, transparent 57%, black 58%, black 66%, transparent 67%);
+}
+
+#arrival .emblem-ring--outer {
+  inset: 1%;
+  background:
+    conic-gradient(from 24deg, transparent 0 7%, rgba(224, 184, 75, 0.98) 8.5% 13.5%, transparent 15% 25%, rgba(111, 71, 16, 0.66) 26% 30%, transparent 32% 47%, rgba(224, 184, 75, 0.82) 49% 54%, transparent 56% 72%, rgba(196, 145, 47, 0.8) 74% 79%, transparent 81% 100%),
+    radial-gradient(circle, transparent 62%, rgba(8, 7, 7, 0.88) 63% 68%, transparent 69%);
+  box-shadow:
+    0 0 56px rgba(196, 145, 47, 0.2),
+    inset 0 0 46px rgba(5, 5, 5, 0.74);
+  animation: emblem-rotate 68s linear infinite;
+}
+
+#arrival .emblem-ring--segmented {
+  inset: 7%;
+  background:
+    conic-gradient(from 92deg, transparent 0 6%, rgba(224, 184, 75, 0.96) 7% 9%, transparent 10% 19%, rgba(196, 145, 47, 0.8) 21% 23%, transparent 25% 42%, rgba(224, 184, 75, 0.72) 44% 47%, transparent 49% 69%, rgba(224, 184, 75, 0.9) 71% 74%, transparent 76% 100%);
+  mask-image: radial-gradient(circle, transparent 65%, black 66%, black 69%, transparent 70%);
+  animation: emblem-counter-rotate 58s linear infinite;
+}
+
+#arrival .emblem-ring--inner {
+  inset: 17%;
+  background:
+    conic-gradient(from 220deg, transparent 0 16%, rgba(224, 184, 75, 0.64) 17% 19%, transparent 20% 54%, rgba(42, 15, 74, 0.28) 56% 59%, rgba(224, 184, 75, 0.44) 60% 62%, transparent 64% 100%),
+    radial-gradient(circle, transparent 58%, rgba(224, 184, 75, 0.16) 59%, transparent 62%);
+  animation: emblem-rotate 84s linear infinite;
+}
+
+#arrival .emblem-ring--precision {
+  inset: 25%;
+  background:
+    repeating-conic-gradient(from 0deg, rgba(224, 184, 75, 0.72) 0deg 0.8deg, transparent 0.8deg 9deg),
+    radial-gradient(circle, transparent 70%, rgba(224, 184, 75, 0.18) 71%, transparent 73%);
+  mask-image: radial-gradient(circle, transparent 72%, black 73%, black 76%, transparent 77%);
+  animation: emblem-counter-rotate 110s linear infinite;
+}
+
+#arrival .emblem-orbit {
+  inset: 3%;
+  background:
+    repeating-conic-gradient(from 2deg, rgba(224, 184, 75, 0.58) 0deg 0.65deg, transparent 0.65deg 6.4deg),
+    radial-gradient(circle, transparent 72%, rgba(224, 184, 75, 0.12) 73%, transparent 74%);
+  mask-image: radial-gradient(circle, transparent 75%, black 76%, black 78%, transparent 79%);
+}
+
+#arrival .emblem-crosshair {
+  inset: 14%;
+  background:
+    linear-gradient(90deg, transparent 0 47%, rgba(224, 184, 75, 0.16) 47.2% 47.5%, transparent 47.7% 52.5%, rgba(224, 184, 75, 0.16) 52.7% 53%, transparent 53.2%),
+    linear-gradient(0deg, transparent 0 47%, rgba(224, 184, 75, 0.13) 47.2% 47.5%, transparent 47.7% 52.5%, rgba(224, 184, 75, 0.13) 52.7% 53%, transparent 53.2%);
+  opacity: 0.55;
+}
+
+#arrival .emblem-compass {
+  inset: -1%;
+}
+
+#arrival .emblem-compass span {
+  position: absolute;
+  width: 2px;
+  height: 28px;
+  background: linear-gradient(transparent, rgba(224, 184, 75, 0.84), transparent);
+  box-shadow: 0 0 14px rgba(224, 184, 75, 0.26);
+}
+
+#arrival .emblem-compass span:nth-child(1) {
+  top: 0;
+  left: 50%;
+}
+
+#arrival .emblem-compass span:nth-child(2) {
+  right: 0;
+  top: 50%;
+  transform: rotate(90deg);
+}
+
+#arrival .emblem-compass span:nth-child(3) {
+  bottom: 0;
+  left: 50%;
+}
+
+#arrival .emblem-compass span:nth-child(4) {
+  left: 0;
+  top: 50%;
+  transform: rotate(90deg);
+}
+
+#arrival .hero-logo-stage {
+  width: 70%;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(224, 184, 75, 0.45), transparent 48%),
+    radial-gradient(circle, rgba(20, 16, 11, 0.84) 35%, rgba(8, 7, 7, 0.94) 63%, rgba(5, 5, 5, 0.9));
+  border: 1px solid rgba(224, 184, 75, 0.56);
+  box-shadow:
+    0 0 96px rgba(196, 145, 47, 0.36),
+    0 0 140px rgba(42, 15, 74, 0.13),
+    inset 0 0 0 10px rgba(5, 5, 5, 0.62),
+    inset 0 0 46px rgba(224, 184, 75, 0.14);
+}
+
+#arrival .hero-logo {
+  width: 91%;
+  filter:
+    drop-shadow(0 32px 56px rgba(0, 0, 0, 0.76))
+    drop-shadow(0 0 40px rgba(224, 184, 75, 0.34));
+}
+
+#arrival .emblem-node {
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  z-index: 4;
+  transform-origin: 0 0;
+}
+
+#arrival .emblem-node--one {
+  animation: hero-node-orbit-one 38s linear infinite;
+}
+
+#arrival .emblem-node--two {
+  width: 9px;
+  height: 9px;
+  animation: hero-node-orbit-two 48s linear infinite;
+}
+
+#arrival .emblem-node--three {
+  width: 8px;
+  height: 8px;
+  animation: hero-node-orbit-three 58s linear infinite;
+}
+
+@keyframes hero-command-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 42px rgba(196, 145, 47, 0.12));
+  }
+
+  50% {
+    transform: scale(1.012);
+    filter: drop-shadow(0 0 76px rgba(224, 184, 75, 0.22));
+  }
+}
+
+@keyframes hero-node-orbit-one {
+  from {
+    transform: rotate(18deg) translateX(clamp(150px, 19vw, 275px)) rotate(-18deg);
+  }
+
+  to {
+    transform: rotate(378deg) translateX(clamp(150px, 19vw, 275px)) rotate(-378deg);
+  }
+}
+
+@keyframes hero-node-orbit-two {
+  from {
+    transform: rotate(152deg) translateX(clamp(128px, 16vw, 230px)) rotate(-152deg);
+  }
+
+  to {
+    transform: rotate(-208deg) translateX(clamp(128px, 16vw, 230px)) rotate(208deg);
+  }
+}
+
+@keyframes hero-node-orbit-three {
+  from {
+    transform: rotate(270deg) translateX(clamp(108px, 13vw, 190px)) rotate(-270deg);
+  }
+
+  to {
+    transform: rotate(630deg) translateX(clamp(108px, 13vw, 190px)) rotate(-630deg);
+  }
+}
+
+@media (max-width: 1100px) {
+  #arrival.hero-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding-top: 34px;
+  }
+
+  #arrival .hero-emblem {
+    order: -1;
+    width: min(58vw, 430px);
+    min-width: 0;
+  }
+
+  #arrival .hero-content {
+    max-width: 880px;
+  }
+}
+
+@media (max-width: 720px) {
+  #arrival.hero-section {
+    min-height: auto;
+    gap: 18px;
+    padding: 24px 16px 54px;
+  }
+
+  #arrival .hero-emblem {
+    width: min(72vw, 310px);
+  }
+
+  #arrival .hero-content {
+    padding: 15px 0 0 14px;
+    background: linear-gradient(90deg, rgba(224, 184, 75, 0.08), transparent 72%);
+  }
+
+  #arrival h1 {
+    font-size: clamp(2.7rem, 14.5vw, 3.8rem);
+    margin-bottom: 14px;
+  }
+
+  #arrival .hero-subtitle,
+  #arrival .hero-statement {
+    font-size: 1rem;
+    line-height: 1.48;
+  }
+
+  #arrival .tagline {
+    margin-bottom: 14px;
+    padding: 10px 12px;
+  }
+
+  #arrival .button-row {
+    margin-top: 22px;
+  }
+}
+
+@media (max-width: 420px) {
+  #arrival .hero-emblem {
+    width: min(76vw, 280px);
+  }
+
+  #arrival h1 {
+    font-size: clamp(2.55rem, 14vw, 3.25rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #arrival .hero-emblem,
+  #arrival .emblem-ring--outer,
+  #arrival .emblem-ring--segmented,
+  #arrival .emblem-ring--inner,
+  #arrival .emblem-ring--precision,
+  #arrival .emblem-node {
+    animation: none;
+  }
+}

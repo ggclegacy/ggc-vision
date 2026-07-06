@@ -8,15 +8,10 @@ type EcosystemMapProps = {
 export function EcosystemMap({ pillars }: EcosystemMapProps) {
   return (
     <div className="ecosystem-wrap">
-      <div className="ecosystem-core">
-        <span>GGC</span>
-        <strong>Legacy Engine</strong>
-        <small>Products + Protocols + Culture</small>
-      </div>
-      <div className="ecosystem-grid">
+      <div className="ecosystem-architecture">
         {pillars.map((pillar, index) => (
           <article
-            className="pillar-card"
+            className={`pillar-card ecosystem-node ecosystem-node-${index + 1}`}
             key={pillar.title}
             style={{ '--delay': `${index * 80}ms` } as CSSProperties}
           >
@@ -26,6 +21,11 @@ export function EcosystemMap({ pillars }: EcosystemMapProps) {
             <p>{pillar.body}</p>
           </article>
         ))}
+        <div className="ecosystem-core">
+          <span>GGC</span>
+          <strong>Legacy Engine</strong>
+          <small>Products + Protocols + Culture</small>
+        </div>
       </div>
     </div>
   );
