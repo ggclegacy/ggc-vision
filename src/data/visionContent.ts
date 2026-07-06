@@ -23,18 +23,50 @@ export const navItems: NavItem[] = [
   { label: 'Roadmap', target: 'roadmap' },
 ];
 
-export const marketCards: CardItem[] = [
+export const marketProblemCards: CardItem[] = [
   {
-    title: 'Massive men’s wellness opportunity',
-    body: 'Men are actively searching for sharper grooming, higher energy, better sleep, stronger bodies, and brands that understand ambition without noise.',
+    title: 'Grooming Without Identity',
+    body: 'Most grooming brands stop at appearance. They miss the deeper truth: grooming is how a man signals discipline, self-respect, and standard.',
   },
   {
-    title: 'Repeat-purchase categories',
-    body: 'Grooming, supplements, skincare, shave care, and protocol-based wellness create natural replenishment behavior.',
+    title: 'Wellness Without Masculine Direction',
+    body: 'Most wellness brands either feel generic, clinical, or feminine-coded. Men need performance, recovery, longevity, and energy framed in a way that speaks to ambition and responsibility.',
   },
   {
-    title: 'Loyalty through personalization and community',
-    body: 'The brand gets stronger when the product is tied to identity, ritual, guidance, and a circle worth staying inside.',
+    title: 'Supplements Without Ritual',
+    body: 'Most supplements are sold as isolated formulas. Groomed Gent Co. turns them into protocols — routines a man can understand, follow, and build into his lifestyle.',
+  },
+  {
+    title: 'Self-Improvement Without Culture',
+    body: 'Motivation is everywhere, but most of it fades. Men need structure, brotherhood, accountability, and a standard they can return to daily.',
+  },
+  {
+    title: 'Products Without a World',
+    body: 'Most small brands sell transactions. Groomed Gent Co. is building a world: products, protocols, boxes, memberships, barber services, partnerships, and community.',
+  },
+];
+
+export const marketWhiteSpaceItems = [
+  'Grooming',
+  'Health',
+  'Mindset',
+  'Legacy',
+  'Community',
+  'Membership',
+];
+
+export const marketOpportunityCards: CardItem[] = [
+  {
+    title: 'Multiple Entry Points',
+    body: 'A man can enter through grooming, hydration, sleep, performance, skin care, a personalized box, a barber service, or a private invite.',
+  },
+  {
+    title: 'One Deeper Journey',
+    body: 'Every entry point leads into the same brand world — routines, protocols, membership, community, and long-term loyalty.',
+  },
+  {
+    title: 'Stronger Than a Product Brand',
+    body: 'Products create the first sale. Identity creates attachment. Ritual creates repeat behavior. Community creates retention.',
   },
 ];
 

@@ -13,7 +13,9 @@ import {
   crewCards,
   ecosystemPillars,
   journeySteps,
-  marketCards,
+  marketOpportunityCards,
+  marketProblemCards,
+  marketWhiteSpaceItems,
   navItems,
   reserveProducts,
   roadmapPhases,
@@ -153,14 +155,104 @@ export default function App() {
         <Section
           id="market-gap"
           eyebrow="Market Gap"
-          title="Men Are Ready for More Than Products"
-          intro="Most men’s brands fall into weak lanes: cheap basic grooming, loud gym-bro supplements, generic wellness apps, or luxury without a real masculine operating system."
+          title="The Gap Is Bigger Than Grooming."
+          intro="Men are not just looking for another product. They are looking for sharper presentation, stronger energy, better routines, higher standards, and a brand that understands the whole man."
         >
-          <div className="positioning-line">
-            Groomed Gent Co. sits at the intersection of grooming, wellness, discipline, culture,
-            and legacy.
+          <div className="market-gap-layout">
+            <div className="market-moment market-diagnosis-opening">
+              <div className="market-diagnosis-copy">
+                <span className="market-gold-divider" aria-hidden="true" />
+                <p className="market-gap-diagnosis">
+                  Men are being sold grooming products, wellness products, supplements, motivation,
+                  and memberships as separate worlds. The real opportunity is to connect them into
+                  one premium masculine operating system.
+                </p>
+              </div>
+
+              <article className="market-statement-card">
+                <span>Category thesis</span>
+                <strong>
+                  Most brands sell men one piece of the puzzle. Groomed Gent Co. is building the
+                  system.
+                </strong>
+              </article>
+            </div>
+
+            <div className="market-moment disconnected-market">
+              <div className="market-block-heading">
+                <p className="eyebrow">Disconnected Market</p>
+                <h3>Five categories, no operating system</h3>
+              </div>
+
+              <div className="market-strategy-board">
+                <div className="strategy-linework" aria-hidden="true">
+                  <span />
+                  <span />
+                  <span />
+                  <span />
+                  <span />
+                </div>
+                <div className="strategy-core" aria-hidden="true">
+                  <span>Gap</span>
+                </div>
+                <div className="market-problem-grid">
+                  {marketProblemCards.map((card, index) => (
+                    <article className="market-problem-card" key={card.title}>
+                      <span className="market-card-number">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <h3>{card.title}</h3>
+                      <p>{card.body}</p>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <article className="market-moment market-white-space">
+              <div className="white-space-copy">
+                <p className="eyebrow">The White Space</p>
+                <h3>The category creation moment</h3>
+                <p>
+                  The opportunity is to own the premium masculine lifestyle system — not just
+                  another product shelf.
+                </p>
+              </div>
+              <div className="white-space-system" aria-label="Groomed Gent Co. white space system">
+                <div className="white-space-orbit" aria-hidden="true" />
+                <div className="white-space-core">
+                  <span>Groomed Gent Co.</span>
+                  <strong>System</strong>
+                </div>
+                <div className="white-space-nodes">
+                  {marketWhiteSpaceItems.map((item) => (
+                    <span className="white-space-node" key={item}>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+
+            <div className="market-block-heading market-block-heading--opportunity">
+              <p className="eyebrow">Investor opportunity</p>
+              <h3>One ecosystem, many ways in</h3>
+            </div>
+
+            <div className="market-opportunity-grid">
+              {marketOpportunityCards.map((card) => (
+                <article className="market-opportunity-card" key={card.title}>
+                  <h3>{card.title}</h3>
+                  <p>{card.body}</p>
+                </article>
+              ))}
+            </div>
+
+            <p className="market-closing-line">
+              Groomed Gent Co. is not chasing a trend. It is building the category men already
+              needed.
+            </p>
           </div>
-          <CardGrid items={marketCards} />
         </Section>
 
         <Section id="ecosystem" eyebrow="Empire Map" title="The Groomed Gent Co. Ecosystem">
